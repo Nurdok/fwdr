@@ -8,13 +8,12 @@
     <p>Redirecting...</p>
   </body>
   <script>
-    // Get the encoded URL from the path of the current page
-    const path = window.location.pathname;
-    const encodedUrl = path.substr(path.lastIndexOf('/') + 1);
-    console.log('Encoded URL:', encodedUrl);
+    // Get the URL parameter
+    const urlParam = new URLSearchParams(window.location.search).get('url');
+    console.log('Encoded URL parameter:', urlParam);
     
-    // Decode the URL
-    const url = decodeURIComponent(encodedUrl);
+    // Decode the URL parameter
+    const url = decodeURIComponent(urlParam);
     console.log('Decoded URL:', url);
     
     // Redirect to the decoded URL
