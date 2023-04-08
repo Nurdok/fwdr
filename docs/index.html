@@ -13,10 +13,10 @@
     console.log('Encoded URL parameter:', urlParam);
     
     // Decode the URL parameter
-    const url = decodeURIComponent(urlParam);
-    console.log('Decoded URL:', url);
+    const decodedUrlParam = atob(urlParam.replace(/_/g, '/').replace(/-/g, '+'));
+    console.log('Decoded URL parameter:', decodedUrlParam);
     
     // Redirect to the decoded URL
-    window.location.replace(url);
+    window.location.replace(decodedUrlParam);
   </script>
 </html>
